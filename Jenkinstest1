@@ -1,0 +1,9 @@
+node{
+    def mavenHome = tool name: "maven3.9.1"
+    stage  ('git'){
+        git 'https://github.com/organizationn111/MavenTest123.git'
+    }
+    stage ('maven build'){
+        sh "${mavenHome}/bin/mvn clean package"
+}
+    }
